@@ -8,6 +8,7 @@ import Blogs from "./components/Blogs/Blogs";
 import SideBar from "./components/SideBar/SideBar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Questions from "./components/Question/Questions";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,6 +33,7 @@ function App() {
           </div>
         </div>
         <ToastContainer></ToastContainer>
+        <Questions></Questions>
       </div>
     </div>
   );

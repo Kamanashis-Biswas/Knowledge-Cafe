@@ -13,7 +13,7 @@ const SideBar = ({ states }) => {
           Bookmarked Blogs : {states.bookmarks.length}
         </h4>
         <div className="">
-          <p className="fw-bold fs-5">
+          <p className="fw-bold fs-5 p-3">
             {states.bookmarks && states.bookmarks.map((e) => <div>{e}</div>)}
           </p>
         </div>

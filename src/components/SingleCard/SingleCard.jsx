@@ -32,7 +32,6 @@ const SingleCard = ({ blog, states }) => {
                   if (!p) {
                     states.setBookmarks([...states.bookmarks, blog.blog_title]);
                   } else {
-                    //console.log("Already added");
                     showToast();
                   }
                 }}

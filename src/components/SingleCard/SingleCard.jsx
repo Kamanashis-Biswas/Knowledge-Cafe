@@ -2,9 +2,13 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import "./SingleCard.css";
+import { ToastContainer, toast } from "react-toastify";
 
-const SingleCard = ({ blog, time, setTime }) => {
+const SingleCard = ({ blog, states }) => {
   console.log(blog);
+  const showToast = () => {
+    toast("This item is already added !!");
+  };
   return (
     <div>
       <div className="blog-card card mb-5">
@@ -21,7 +25,19 @@ const SingleCard = ({ blog, time, setTime }) => {
               </div>
             </div>
             <p className="fs-4">
-              {blog.read_time} min read <FontAwesomeIcon icon={faBookmark} />
+              {blog.read_time} min read{" "}
+              <FontAwesomeIcon
+                onClick={() => {
+                  const p = states.bookmarks.find((e) => e === blog.blog_title);
+                  if (!p) {
+                    states.setBookmarks([...states.bookmarks, blog.blog_title]);
+                  } else {
+                    //console.log("Already added");
+                    showToast();
+                  }
+                }}
+                icon={faBookmark}
+              />
             </p>
           </div>
         </div>
@@ -31,7 +47,7 @@ const SingleCard = ({ blog, time, setTime }) => {
         <div>
           <button
             onClick={() => {
-              setTime(time + +blog.read_time);
+              states.setTime(states.time + +blog.read_time);
             }}
             className="bg-white text-primary border-0"
           >

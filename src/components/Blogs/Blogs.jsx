@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SingleCard from "../SingleCard/SingleCard";
 
-const Blogs = ({ time, setTime }) => {
+const Blogs = ({ states }) => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     fetch("data.json")
@@ -13,7 +13,7 @@ const Blogs = ({ time, setTime }) => {
     <div>
       <div className="blogs-container">
         {blogs.map((blog) => (
-          <SingleCard blog={blog} time={time} setTime={setTime}></SingleCard>
+          <SingleCard blog={blog} states={states}></SingleCard>
         ))}
       </div>
     </div>

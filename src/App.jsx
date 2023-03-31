@@ -6,22 +6,32 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Blogs from "./components/Blogs/Blogs";
 import SideBar from "./components/SideBar/SideBar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [count, setCount] = useState(0);
   const [time, setTime] = useState(0);
+  const [bookmarks, setBookmarks] = useState([]);
+  const states = {
+    time,
+    setTime,
+    bookmarks,
+    setBookmarks,
+  };
   return (
     <div className="App">
       <div>
         <Header></Header>
         <div className="main row">
           <div className="blog-container col-md-9">
-            <Blogs setTime={setTime} time={time}></Blogs>
+            <Blogs states={states}></Blogs>
           </div>
           <div className="sidebar col-md-3">
-            <SideBar time={time}></SideBar>
+            <SideBar states={states}></SideBar>
           </div>
         </div>
+        <ToastContainer></ToastContainer>
       </div>
     </div>
   );

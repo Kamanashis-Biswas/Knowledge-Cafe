@@ -9,17 +9,17 @@ import SideBar from "./components/SideBar/SideBar";
 
 function App() {
   const [count, setCount] = useState(0);
-
+  const [time, setTime] = useState(0);
   return (
     <div className="App">
       <div>
         <Header></Header>
         <div className="main row">
-          <div className="blog-container col-md-8">
-            <Blogs></Blogs>
+          <div className="blog-container col-md-9">
+            <Blogs setTime={setTime} time={time}></Blogs>
           </div>
-          <div className="sidebar col-md-4">
-            <SideBar></SideBar>
+          <div className="sidebar col-md-3">
+            <SideBar time={time}></SideBar>
           </div>
         </div>
       </div>

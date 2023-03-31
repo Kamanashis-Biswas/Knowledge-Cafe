@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
-const SideBar = () => {
+const SideBar = ({ time }) => {
+  const [bookmarks, setBookmarks] = useState([]);
   return (
     <div>
-      <h1>SideBar</h1>
-      <h1>SideBar</h1>
+      <div>
+        <h5 className="border border-primary text-center py-3 rounded text-primary fw-bold">
+          Spent time on read : {time}
+        </h5>
+      </div>
+      <div className="bg-light rounded">
+        <h4 className="fw-bold mt-3 py-3 ms-2">
+          Bookmarked Blogs : {bookmarks.length}
+        </h4>
+      </div>
     </div>
   );
 };

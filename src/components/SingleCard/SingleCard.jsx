@@ -1,11 +1,13 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import "./SingleCard.css";
 
-const SingleCard = ({ blog }) => {
+const SingleCard = ({ blog, time, setTime }) => {
   console.log(blog);
   return (
     <div>
-      <div className="blog-card card">
+      <div className="blog-card card mb-5">
         <div className="blogs-cover">
           <img className="w-100" src={blog.images.blog_cover_image} alt="" />
         </div>
@@ -18,14 +20,21 @@ const SingleCard = ({ blog }) => {
                 <p className="fs-5">{blog.publish_date}</p>
               </div>
             </div>
-            <p className="fs-4">{blog.read_time}</p>
+            <p className="fs-4">
+              {blog.read_time} min read <FontAwesomeIcon icon={faBookmark} />
+            </p>
           </div>
         </div>
         <div className="blog-title">
           <h1>{blog.blog_title}</h1>
         </div>
         <div>
-          <button className="bg-white text-primary border-0">
+          <button
+            onClick={() => {
+              setTime(time + +blog.read_time);
+            }}
+            className="bg-white text-primary border-0"
+          >
             <u>Mark as read</u>
           </button>
         </div>

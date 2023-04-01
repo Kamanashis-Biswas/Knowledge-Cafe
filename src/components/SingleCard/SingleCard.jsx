@@ -21,7 +21,7 @@ const SingleCard = ({ blog, states }) => {
               <img src={blog.images.author_image} alt="" />
               <div className="ms-3">
                 <h3 className="fw-bold">{blog.author_name}</h3>
-                <p className="fs-5">{blog.publish_date}</p>
+                <p className="fs-4">{blog.publish_date}</p>
               </div>
             </div>
             <p className="fs-4">

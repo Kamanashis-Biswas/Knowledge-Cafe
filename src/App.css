@@ -1,7 +1,10 @@
 #root {
   padding: 0 2rem;
-  min-width: 1440px;
   margin: 0 auto;
+}
+
+.screen-size {
+  max-width: 1080px;
 }
 
 .logo {

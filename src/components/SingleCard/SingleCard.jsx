@@ -11,17 +11,21 @@ const SingleCard = ({ blog, states }) => {
   };
   return (
     <div>
-      <div className="blog-card card mb-5">
-        <div className="blogs-cover">
+      <div className="card mb-5">
+        <div>
           <img className="w-100" src={blog.images.blog_cover_image} alt="" />
         </div>
-        <div className="blog-body">
-          <div className="author mt-4 d-flex justify-content-between align-items-center">
+        <div>
+          <div className="author flex-wrap mt-4 d-flex justify-content-between align-items-center">
             <div className="d-flex">
-              <img src={blog.images.author_image} alt="" />
+              <img
+                className="img-fluid"
+                src={blog.images.author_image}
+                alt=""
+              />
               <div className="ms-3">
-                <h3 className="fw-bold">{blog.author_name}</h3>
-                <p className="fs-4">{blog.publish_date}</p>
+                <h5 className="fw-bold">{blog.author_name}</h5>
+                <p className="fs-5">{blog.publish_date}</p>
               </div>
             </div>
             <p className="fs-4">
@@ -40,15 +44,15 @@ const SingleCard = ({ blog, states }) => {
             </p>
           </div>
         </div>
-        <div className="blog-title">
-          <h1>{blog.blog_title}</h1>
+        <div>
+          <h2>{blog.blog_title}</h2>
         </div>
         <div>
           <button
             onClick={() => {
               states.setTime(states.time + +blog.read_time);
             }}
-            className="bg-white text-primary fs-2 border-0"
+            className="bg-white p-0 text-primary fs-2 border-0"
           >
             <u>Mark as read</u>
           </button>

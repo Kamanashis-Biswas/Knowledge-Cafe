@@ -21,14 +21,14 @@ function App() {
     setBookmarks,
   };
   return (
-    <div className="App">
+    <div className="App screen-size">
       <div>
         <Header></Header>
         <div className="main row">
-          <div className="blog-container col-md-9">
+          <div className="col-md-8">
             <Blogs states={states}></Blogs>
           </div>
-          <div className="sidebar col-md-3">
+          <div className="col-md-4">
             <SideBar states={states}></SideBar>
           </div>
         </div>

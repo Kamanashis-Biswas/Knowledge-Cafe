@@ -11,7 +11,7 @@ const Blogs = ({ states }) => {
 
   return (
     <div>
-      <div className="blogs-container">
+      <div>
         {blogs.map((blog) => (
           <SingleCard blog={blog} states={states}></SingleCard>
         ))}

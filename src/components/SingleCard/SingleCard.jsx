@@ -48,7 +48,7 @@ const SingleCard = ({ blog, states }) => {
             onClick={() => {
               states.setTime(states.time + +blog.read_time);
             }}
-            className="bg-white text-primary border-0"
+            className="bg-white text-primary fs-2 border-0"
           >
             <u>Mark as read</u>
           </button>
